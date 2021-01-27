@@ -8,4 +8,5 @@ RUN npm build
 
 # To serve frontend files in production, we are using nginx as base image with previous build
 FROM nginx
+EXPOSE 80
 COPY --from=builder /usr/app/build /usr/share/nginx/html

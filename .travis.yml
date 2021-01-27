@@ -22,7 +22,7 @@ deploy:
     branch: main
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
-  EnhancedHealthAuthEnabled: false
+  EnhancedHealthAuthEnabled: true
 
 after_deploy:
   - ./after_deploy_1.sh

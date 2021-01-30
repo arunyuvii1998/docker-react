@@ -4,7 +4,7 @@ services:
   - docker
 
 before-install:
-  - docker build -t arun98/docker-react .
+  - docker build -t arun98/docker-react -f Dockerfile .
 
 script:
   - docker run -e CI=true arun98/docker-react npm run test
@@ -13,10 +13,10 @@ before_deploy: "echo 'ready?'"
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-2"
+  region: "ap-south-1"
   app: "Docker-react"
-  env: "DockerReact-env"
-  bucket-name: "elasticbeanstalk-us-east-2-919723724666"
+  env: "Dockerreact-env"
+  bucket-name: "elasticbeanstalk-ap-south-1-919723724666"
   bucket-path: "Docker-react"
   on:
     branch: main
